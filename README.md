@@ -65,7 +65,31 @@ Always mark state properties as private because state should be specific to a vi
 Use the @State property wrapper to mark a value as state, declare the property as private, and give it a default value.
 
 
-## 问题
+## 封装Package相关问题
+
+### 创建swiftPM库
+```sh
+swift package init --type library
+```
+初始化无法在iOS设备或模拟器上编译，需要设置Package支持平台： `platforms: [.iOS(.v15)],`。
+
+### 构造器public
+```swift
+public struct LandmarksApp:View {
+    @StateObject private var modelData = ModelData()
+    
+    public init() {
+        
+    }
+    
+    public var body: some View{
+        LandmarkList().environmentObject(modelData)
+    }
+}
+```
+
+
+
 
 ### SwiftPM资源管理
 https://www.jianshu.com/p/44560fd214d2#f35b6207-3e44-ab92-ee76-769d436721ba
