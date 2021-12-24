@@ -15,6 +15,8 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
+        .package(name: "Quick", path: "/Users/boyer/hsg/Quick"),
+        .package(name: "Nimble", path: "/Users/boyer/hsg/Nimble"),
     ],
     targets: [
         .target(
@@ -27,6 +29,6 @@ let package = Package(
         ),
         .testTarget(
             name: "LandmarksTests",
-            dependencies: ["Landmarks"]),
+            dependencies: ["Landmarks","Quick","Nimble"]),
     ]
 )

@@ -123,3 +123,36 @@ else{
 
 ### 详情页面预览崩溃
  订阅存储器时，无法通过LandmarkDetail_Previews单独预览,必须在预览中装载环境数据.environmentObject(ModelData())或通过点击列表进入详情，否则会崩溃。
+
+
+## 集成Quick进行单元测试
+ 在SwiftPM管理项目时，不需要生成xcodeproj功能文件，也可以进行单元测试。
+ 在Package.swift文件中添加以来库
+ ```swift
+        .package(name: "Quick", path: "/Users/boyer/hsg/Quick"),
+        .package(name: "Nimble", path: "/Users/boyer/hsg/Nimble"),
+ ```
+ 添加targetTest依赖
+ ```swift
+         .testTarget(
+            name: "LandmarksTests",
+            dependencies: ["Landmarks","Quick","Nimble"]),
+ ``` 
+ 然后在新建一个Quick模版测试类,引入Quick和@testable impor 测试库
+ ```swift
+ import Quick
+
+@testable import Landmarks
+
+class QuickTests: QuickSpec {
+    override func spec() {
+        describe("文件加载方式验证") {
+            fit("加载app中的json文件") {
+                let json:[Landmark] = loadT("landmarkData.json")
+                print("json:\(json[0])")
+            }
+        }
+    }
+}
+ ```
+ 这样就可以轻松测试了。
