@@ -28,7 +28,7 @@ https://developer.apple.com/sf-symbols/
     NavigationView：导航条
 ### 用户交互
 1. 仅展示收藏列表
-    1. 修改@state属性，视图使用$语法监听属性变更，出发视图刷新。响应式UI刷新。
+    1. 修改@state属性，视图使用$语法监听属性变更，触发视图刷新。响应式UI刷新。
 2. 详情页面收藏+更新列表状态
 
 ## 官方习题
