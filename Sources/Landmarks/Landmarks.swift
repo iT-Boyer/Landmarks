@@ -6,9 +6,7 @@ public struct Landmarks:View {
     @StateObject private var modelData = ModelData()
     
     // 构造器必须public
-    public init() {
-        
-    }
+    public init() {}
     
     // 属性必须public
     public var body: some View{

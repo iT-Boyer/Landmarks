@@ -138,7 +138,7 @@ else{
             name: "LandmarksTests",
             dependencies: ["Landmarks","Quick","Nimble"]),
  ``` 
- 然后在新建一个Quick模版测试类,引入Quick和@testable impor 测试库
+ 然后在新建一个Quick模版测试类,引入Quick和@testable import 测试库
  ```swift
  import Quick
 

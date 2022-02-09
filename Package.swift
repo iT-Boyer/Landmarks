@@ -4,12 +4,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "Landmarks",
-    platforms: [.iOS(.v15)],
+    name: "iHackerPM",
+    platforms: [.iOS(.v15),
+                .macOS(.v10_15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Landmarks",
+            type: .static,
             targets: ["Landmarks"]),
     ],
     dependencies: [
@@ -32,3 +34,15 @@ let package = Package(
             dependencies: ["Landmarks","Quick","Nimble"]),
     ]
 )
+
+// SPM demo
+let myLibrary = Target.target(name: "MyLibrary")
+let myLibraryLib = Product.library(name: "MyLibrary", type: .static, targets: ["MyLibrary"])
+package.targets.append(myLibrary)
+package.products.append(myLibraryLib)
+
+//添加项目
+let wesplit = Target.target(name: "Wesplit")
+let wesplitLib = Product.library(name: "Wesplit", type: .static, targets: ["Wesplit"])
+package.targets.append(wesplit)
+package.products.append(wesplitLib)
