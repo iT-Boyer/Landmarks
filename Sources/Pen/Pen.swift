@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct Pen: View {
-    @State var numberOfSegments = 0.0
+    @State var numberOfSegments = 3.0
     var body: some View {
         VStack {
             HStack {
@@ -25,9 +25,9 @@ struct Pen: View {
                     .resizable()
                     .frame(width: 300, height: 400, alignment: .top)
             }
-            Slider(value: $numberOfSegments, in: 1...11, step: 1.0)
+            Slider(value: $numberOfSegments, in: 2...12, step: 1.0)
               .padding()
-            Text("设置可选择的人数为：\(numberOfSegments)")
+            Text("设置可选择的人数为：\(numberOfSegments, specifier:"%.f")")
         }
     }
 }
