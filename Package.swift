@@ -11,7 +11,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Landmarks",
-            type: .static,
+//            type: .static, // 当时static时，无法预览swiftUI
             targets: ["Landmarks"]),
     ],
     dependencies: [
@@ -37,12 +37,12 @@ let package = Package(
 
 // SPM demo
 let myLibrary = Target.target(name: "MyLibrary")
-let myLibraryLib = Product.library(name: "MyLibrary", type: .static, targets: ["MyLibrary"])
+let myLibraryLib = Product.library(name: "MyLibrary", targets: ["MyLibrary"]) // type: .static,
 package.targets.append(myLibrary)
 package.products.append(myLibraryLib)
 
 //添加项目
 let wesplit = Target.target(name: "Wesplit")
-let wesplitLib = Product.library(name: "Wesplit", type: .static, targets: ["Wesplit"])
+let wesplitLib = Product.library(name: "Wesplit",  targets: ["Wesplit"]) //type: .static,
 package.targets.append(wesplit)
 package.products.append(wesplitLib)
