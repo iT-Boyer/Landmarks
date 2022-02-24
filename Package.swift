@@ -42,7 +42,12 @@ package.targets.append(myLibrary)
 package.products.append(myLibraryLib)
 
 //添加项目
-let wesplit = Target.target(name: "Wesplit")
-let wesplitLib = Product.library(name: "Wesplit", targets: ["Wesplit"]) //type: .static,
-package.targets.append(wesplit)
-package.products.append(wesplitLib)
+addLib(name: "Wesplit")
+addLib(name: "Pen")
+
+func addLib(name:String) {
+    let target = Target.target(name: name)
+    let library = Product.library(name: name, targets: [name]) //type: .static,
+    package.targets.append(target)
+    package.products.append(library)
+}
