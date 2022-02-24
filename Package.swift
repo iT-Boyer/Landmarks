@@ -43,6 +43,6 @@ package.products.append(myLibraryLib)
 
 //添加项目
 let wesplit = Target.target(name: "Wesplit")
-let wesplitLib = Product.library(name: "Wesplit",  targets: ["Wesplit"]) //type: .static,
+let wesplitLib = Product.library(name: "Wesplit", targets: ["Wesplit"]) //type: .static,
 package.targets.append(wesplit)
 package.products.append(wesplitLib)
