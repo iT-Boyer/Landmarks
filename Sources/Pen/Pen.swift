@@ -10,13 +10,6 @@ struct Pen: View {
     @State var numberOfSegments = 3.0
     var body: some View {
         VStack {
-            HStack {
-                Text("命运之笔")
-                  .font(.system(size: 28))
-                  .fontWeight(.bold)
-                  .frame(alignment:.leading)
-                Spacer()
-            }.padding()
             Button {
                 //action
             } label: {
@@ -29,6 +22,8 @@ struct Pen: View {
               .padding()
             Text("设置可选择的人数为：\(numberOfSegments, specifier:"%.f")")
         }
+        .navigationBarTitle("命运之笔",displayMode: .large)
+        .foregroundColor(.red)
     }
 }
 
