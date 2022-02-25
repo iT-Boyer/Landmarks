@@ -23,7 +23,6 @@ struct Pen: View {
             Text("设置可选择的人数为：\(numberOfSegments, specifier:"%.f")")
         }
         .navigationBarTitle("命运之笔",displayMode: .large)
-        .foregroundColor(.red)
     }
 }
 
