@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "iHackerPM",
+    name: "iHacker",
     platforms: [.iOS(.v15),
                 .macOS(.v10_15)],
     products: [
